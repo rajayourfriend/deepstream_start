@@ -72,3 +72,8 @@ ffmpeg version 3.4.8-0ubuntu0.2 Copyright (c) 2000-2020 the FFmpeg developers
 
 
 raja@raja-jetson-linux:~$ ffmpeg -f v4l2 -video_size 640x480 -i /dev/video0 -frames 1 out.jpg
+
+
+ffmpeg -f v4l2 -framerate 25 -video_size 640x480 -input_format yuyv422 -i /dev/video0 -c copy out.mkv
+ffmpeg -f v4l2 -framerate 25 -video_size 160x120 -input_format yuyv422 -i /dev/video0 -c copy out.mkv
+ffmpeg -f v4l2 -framerate 25 -video_size 640x480 -input_format yuyv422 -i /dev/video0 -c copy out.mp4
