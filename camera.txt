@@ -1,7 +1,7 @@
 
-sudo apt-get install v4l-utils
+raja@raja-jetson-linux:~$ sudo apt-get install v4l-utils
 
-sudo v4l2-ctl --list-devices
+raja@raja-jetson-linux:~$ sudo v4l2-ctl --list-devices
 
 raja@raja-jetson-linux:~$ sudo v4l2-ctl --device=/dev/video0 --all
 Driver Info (not using libv4l2):
@@ -52,3 +52,5 @@ Streaming Parameters Video Capture:
          backlight_compensation 0x0098091c (int)    : min=0 max=2 step=1 default=0 value=0
                   exposure_auto 0x009a0901 (menu)   : min=0 max=3 default=3 value=3
               exposure_absolute 0x009a0902 (int)    : min=1 max=5000 step=1 default=625 value=625 flags=inactive
+
+raja@raja-jetson-linux:~$ ffmpeg -f v4l2 -video_size 640x480 -i /dev/video0 -frames 1 out.jpg
